@@ -24,7 +24,7 @@ public class Triangles {
                 System.out.println("Enter c:");
                 c=(scanner.nextInt());  
                 
-                if(t.positiveValues(a, b, c) ){
+                if(t.positiveValues(a, b, c) && t.isTriangle(a, b, c)){
                 System.out.println("Triangle is " + t.triangleType(a,b,c));
                 }else{
                     System.out.println("Invalid triangle");
@@ -32,6 +32,15 @@ public class Triangles {
                 
     }
     
+    public boolean isTriangle(int a,int b,int c){
+        if(a+b>c&&b+c>a&&c+a>b){
+            return true;
+        }
+        else{
+            return false;
+        }
+        
+    }
     
     public boolean positiveValues(int a, int b, int c){
         if(a>0&&b>0&&c>0){
